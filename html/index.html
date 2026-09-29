@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jinn Notepad</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="jinn-wrap" class="hidden">
+        <div id="jinn-stage">
+            <!-- left page sidebar -->
+            <div id="jinn-side">
+                <div id="jinn-side-list"></div>
+                <div id="jinn-side-actions">
+                    <button id="jinn-addpage" class="jinn-side-btn" title="Add page">+</button>
+                    <button id="jinn-delpage" class="jinn-side-btn" title="Delete page">&#8211;</button>
+                </div>
+            </div>
+
+            <div id="jinn-page">
+                <div id="jinn-paper">
+                    <canvas id="jinn-canvas"></canvas>
+
+                    <div id="jinn-edit" contenteditable="true" spellcheck="false"
+                         data-ph="Write something..."></div>
+
+                    <button id="jinn-sign" type="button">
+                        <span id="jinn-sign-name"></span>
+                        <span id="jinn-sign-label">SIGN HERE</span>
+                    </button>
+                </div>
+
+                <div id="jinn-tools">
+                    <button id="jinn-trash" class="jinn-btn" title="Clear this page">
+                        <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 14H7L6 7zm3-3h6l1 2H8l1-2z"/></svg>
+                    </button>
+                    <button id="jinn-save" class="jinn-btn" title="Save">
+                        <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>
+                    </button>
+                    <button id="jinn-pencil" class="jinn-btn" title="Toggle draw mode">
+                        <svg viewBox="0 0 24 24"><path d="M4 20l3-1 11-11-2-2L5 17l-1 3zM16 4l2 2"/></svg>
+                    </button>
+                    <button id="jinn-font" class="jinn-btn jinn-btn-text" title="Font &amp; text">Aa</button>
+                    <button id="jinn-emoji" class="jinn-btn" title="Insert emoji">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9"/>
+                            <circle cx="9" cy="10" r="1" fill="#fff" stroke="none"/>
+                            <circle cx="15" cy="10" r="1" fill="#fff" stroke="none"/>
+                            <path d="M8 14c1.5 2 6.5 2 8 0"/>
+                        </svg>
+                    </button>
+                    <button id="jinn-close" class="jinn-btn" title="Close">
+                        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                    </button>
+                </div>
+
+                <div id="jinn-emoji-panel" class="hidden"></div>
+
+                <!-- font / text panel -->
+                <div id="jinn-font-panel" class="hidden">
+                    <div class="jinn-font-head">Font</div>
+                    <div id="jinn-font-list"></div>
+                    <div class="jinn-font-row">
+                        <span class="jinn-font-label">Size</span>
+                        <button id="jinn-size-dn" class="jinn-step" title="Smaller">&#8722;</button>
+                        <span id="jinn-size-val">19</span>
+                        <button id="jinn-size-up" class="jinn-step" title="Bigger">+</button>
+                    </div>
+                    <div class="jinn-font-row">
+                        <span class="jinn-font-label">Style</span>
+                        <button id="jinn-bold" class="jinn-style" title="Bold">B</button>
+                        <button id="jinn-italic" class="jinn-style" title="Italic">I</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
